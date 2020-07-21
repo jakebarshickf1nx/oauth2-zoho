@@ -81,7 +81,7 @@ class Zoho extends AbstractProvider
 
     protected function getAuthorizationHeaders($token = null)
     {
-        return ["Authorization" => "Zoho-oauthtoken {$token->getToken()}"];
+        return ["Authorization" => "Zoho-oauthtoken {$token}"];
     }
 
     /**
