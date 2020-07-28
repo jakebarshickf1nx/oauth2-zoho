@@ -72,9 +72,9 @@ class Zoho extends AbstractProvider
         if ($response->getStatusCode() !== 200 || isset($data['data']['errorCode'])) {
 
             throw new IdentityProviderException(
-                sprintf('There was an error on response: %s', $data['data']['errorCode']),
+                 sprintf('There was an error on response: %s', json_encode($data)),
                 $response->getStatusCode(),
-                $data['data']['status']['description']
+                json_encode($data)
             );
         }
     }
